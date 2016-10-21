@@ -61,8 +61,20 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Katou\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Katou\Line.cs" />
+    <Compile Include="Assets\Scripts\Katou\State.cs" />
+    <Compile Include="Assets\Scripts\Katou\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\Katou\StatefulObjectBase.cs" />
+    <Compile Include="Assets\Scripts\Katou\test.cs" />
     <Compile Include="Assets\Scripts\Nomoto\DeadCounter.cs" />
     <Compile Include="Assets\Scripts\Nomoto\FriezeGaugeController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\BulletOfRailGun.cs" />
