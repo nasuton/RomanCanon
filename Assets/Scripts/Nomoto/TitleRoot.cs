@@ -30,9 +30,6 @@ public class TitleRoot : MonoBehaviour
     [SerializeField]
     GameObject PartsType = null;
 
-    [SerializeField]
-    GameObject StatusUI = null;
-
     void Start()
     {
         for(int i = 0; i < 6; ++i)
@@ -49,7 +46,6 @@ public class TitleRoot : MonoBehaviour
         isShowCustomParts = true;
 
         customParts.SetActive(true);
-        StatusUI.SetActive(true);
         titleText.SetActive(false);
     }
 
@@ -86,7 +82,6 @@ public class TitleRoot : MonoBehaviour
             ui.SetActive(true);
         isShowCustomParts = false;
         customParts.SetActive(false);
-        StatusUI.SetActive(false);
         titleText.SetActive(true);
     }
 
