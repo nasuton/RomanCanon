@@ -6,7 +6,6 @@
 
 /[lL]ibrary
 /[tT]emp
-/[pP]rojectSettings
 
 *.sln
 *.csproj
