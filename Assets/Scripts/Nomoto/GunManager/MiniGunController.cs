@@ -7,8 +7,15 @@ public class MiniGunController : DefaultGunController
     [SerializeField]
     GameObject friezeGauge = null;
 
+    [SerializeField]
+    float defaultWaitTimeOfShot = 0.5f;
+
+    [SerializeField]
+    float maxWaitTimeOfShot = 65.0f;
+
     void Start()
     {
+        setWaitTimeOfShot(defaultWaitTimeOfShot,maxWaitTimeOfShot);
         friezeGauge = GameObject.Find("FriezeGauge");
         StartCoroutine(Shot());
     }
@@ -30,6 +37,8 @@ public class MiniGunController : DefaultGunController
             {
                 MakeBullet();
                 friezeGauge.GetComponent<FriezeGaugeController>().IsShoted = true;
+
+                Debug.Log(waitTimeOfShot);
 
                 yield return new WaitForSeconds(waitTimeOfShot);
             }
