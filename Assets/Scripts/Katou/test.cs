@@ -3,37 +3,23 @@ using System.Collections;
 
 public class test : MonoBehaviour {
 
-    public float speed = 0.1f;
-
-    private Vector3 player;
-
     public GameObject enemy;
 
     public int count = 1;
     public float interval = 5.0f;
 
+    public int now_count;
     private float timer;
 
     void Start()
     {
-        player = Vector3.zero;
-        //Spawn();
+        now_count = 0;
+        Spawn();
     }
 
     void Update()
     {
-        Quaternion targetRotation = Quaternion.LookRotation(player - this.transform.position);
-        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, targetRotation, Time.deltaTime * 1.0f);
-
-        this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
-        float e_p_dis = Vector3.SqrMagnitude(this.transform.position - player);
-
-        if (e_p_dis < 10.0f)
-        {
-            //Destroy(this.gameObject);
-        }
-        if (count <= 3)
+        if (now_count < count)
         {
             timer += Time.deltaTime;
             if (timer >= interval)
@@ -53,7 +39,7 @@ public class test : MonoBehaviour {
 
         GameObject.Instantiate(enemy, pos, Quaternion.identity);
 
-        count += 1;
+        now_count += 1;
     }
 
 }

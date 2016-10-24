@@ -201,13 +201,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 715296955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788e179d7ee919b4e9424485ce1ce4ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b6cf7533fdcf1b43a6d861c0becc605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  enemy: {fileID: 1000010442707258, guid: b30099c4b840bcc49b1fb402074fc890, type: 2}
-  count: 1
-  interval: 5
+  enemy: {fileID: 1000010442707258, guid: 87886b21bddd898428d5c87e83789fb3, type: 2}
+  count: 6
+  interval: 1
+  now_count: 0
 --- !u!4 &715296957
 Transform:
   m_ObjectHideFlags: 0

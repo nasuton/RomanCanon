@@ -70,11 +70,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Katou\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Katou\Line.cs" />
     <Compile Include="Assets\Scripts\Katou\State.cs" />
     <Compile Include="Assets\Scripts\Katou\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Katou\StatefulObjectBase.cs" />
     <Compile Include="Assets\Scripts\Katou\test.cs" />
+    <Compile Include="Assets\Scripts\Katou\test2.cs" />
     <Compile Include="Assets\Scripts\Nomoto\DeadCounter.cs" />
     <Compile Include="Assets\Scripts\Nomoto\FriezeGaugeController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\BulletOfRailGun.cs" />
