@@ -69,12 +69,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Katou\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Katou\State.cs" />
-    <Compile Include="Assets\Scripts\Katou\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\Katou\StatefulObjectBase.cs" />
+    <Compile Include="Assets\Scripts\Katou\boss_cs.cs" />
+    <Compile Include="Assets\Scripts\Katou\enemy2_cs.cs" />
+    <Compile Include="Assets\Scripts\Katou\enemy3_cs.cs" />
+    <Compile Include="Assets\Scripts\Katou\enemy4_cs.cs" />
+    <Compile Include="Assets\Scripts\Katou\enemy_cs.cs" />
+    <Compile Include="Assets\Scripts\Katou\score.cs" />
     <Compile Include="Assets\Scripts\Katou\test.cs" />
-    <Compile Include="Assets\Scripts\Katou\test2.cs" />
+    <Compile Include="Assets\Scripts\Katou\timer.cs" />
     <Compile Include="Assets\Scripts\Nomoto\DeadCounter.cs" />
     <Compile Include="Assets\Scripts\Nomoto\FriezeGaugeController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\BulletOfRailGun.cs" />

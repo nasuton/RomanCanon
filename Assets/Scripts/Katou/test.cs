@@ -3,43 +3,52 @@ using System.Collections;
 
 public class test : MonoBehaviour {
 
-    public GameObject enemy;
+    //エネミーの種類
+    public GameObject[] enemy = new GameObject[5];
 
-    public int count = 1;
-    public float interval = 5.0f;
+    //敵を生成する時間
+    public float interval = 1.0f;
 
-    public int now_count;
-    private float timer;
+    //playerからリスポーンする場所までの距離
+    public float radius = 100.0f;
+
+    //リスポーンする位置
+    private Vector3[] spawn_pos = new Vector3[6];
+
+    //リスポーンする際の角度
+    private float[] angle = new float[6];
 
     void Start()
     {
-        now_count = 0;
-        Spawn();
-    }
-
-    void Update()
-    {
-        if (now_count < count)
+        for(int  i = 0; i < spawn_pos.Length; i ++)
         {
-            timer += Time.deltaTime;
-            if (timer >= interval)
-            {
-                Spawn();
-                timer = 0;
-            }
+            float degree = 40.0f * i;
+
+            float radian = degree * Mathf.PI / 180.0f;
+
+            float x1 = Mathf.Cos(radian) * radius;
+            float z1 = Mathf.Sin(radian) * radius;
+
+            spawn_pos[i] = new Vector3(x1, 0.0f, z1);
+
+            float rotary_axis = (i * -40) - 90;
+
+            angle[i] = rotary_axis;
         }
+
+        StartCoroutine("Spawn", interval);
     }
 
-    void Spawn()
+    IEnumerator Spawn(float time)
     {
-        float x = Random.Range(0.0f, 25.0f);
-        float z = Random.Range(0.0f, 25.0f);
+        while (true)
+        {
+            int count = Random.Range(0, spawn_pos.Length);
 
-        Vector3 pos = new Vector3(x, 0.0f, z);
+            GameObject.Instantiate(enemy[Random.Range(0, enemy.Length)], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
 
-        GameObject.Instantiate(enemy, pos, Quaternion.identity);
-
-        now_count += 1;
+            yield return new WaitForSeconds(time);
+        }
     }
 
 }
