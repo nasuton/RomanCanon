@@ -85,9 +85,12 @@
     <Compile Include="Assets\Scripts\Nomoto\GunManager\MiniGunController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\RailGunController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\RocketLauncherController.cs" />
+    <Compile Include="Assets\Scripts\Nomoto\HitRayCast.cs" />
     <Compile Include="Assets\Scripts\Nomoto\OriginalAsset\TESTCLASS.cs" />
     <Compile Include="Assets\Scripts\Nomoto\OriginalAsset\TestAsset.cs" />
     <Compile Include="Assets\Scripts\Nomoto\OriginalAsset\WeaponTypeAssets.cs" />
+    <Compile Include="Assets\Scripts\Nomoto\Rotater.cs" />
+    <Compile Include="Assets\Scripts\Nomoto\ShowStatus.cs" />
     <Compile Include="Assets\Scripts\Nomoto\SimpleCircleLayoutGroup.cs" />
     <Compile Include="Assets\Scripts\Nomoto\Status\DownPartsStatus.cs" />
     <Compile Include="Assets\Scripts\Nomoto\Status\NormalPartsStatus.cs" />
