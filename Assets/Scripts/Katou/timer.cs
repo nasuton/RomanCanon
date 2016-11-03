@@ -3,28 +3,33 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
-    public float max_Count = 40.0f;
+    [SerializeField]
+    private float max_Count = 40.0f;
 
-    private float countTimer;
+   
+    public float countTimer;
 
-     void Start()
+    void Awake()
     {
         countTimer = max_Count;
     }
 
     void Update()
     {
-        countTimer -= Time.deltaTime;
-        if(30.0f > countTimer)
+        if (0.0f >= countTimer)
         {
+            countTimer = 0;
+
             GetComponent<Text>().text = "Time " + countTimer.ToString("F2");
         }
         else
         {
-            GetComponent<Text>().text = "Time " + ((int)countTimer).ToString();
-        }
-        
+            countTimer -= Time.deltaTime;
 
+            GetComponent<Text>().text = "Time " + countTimer.ToString("F2");
+        }
+
+        //Debug.Log(countTimer);
     }
 
 }

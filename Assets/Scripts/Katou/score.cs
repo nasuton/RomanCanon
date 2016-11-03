@@ -13,7 +13,18 @@ public class score : MonoBehaviour
 
     void Update()
     {
+        
+    }
+
+    public void addScore(int _score)
+    {
+        scoreCount += _score;
         GetComponent<Text>().text = "Score " + scoreCount.ToString();
+    }
+
+    public int ReScore()
+    {
+        return scoreCount;
     }
 
 }

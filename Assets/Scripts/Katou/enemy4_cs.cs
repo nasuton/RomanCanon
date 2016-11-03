@@ -5,11 +5,24 @@ public class enemy4_cs : MonoBehaviour {
 
     private Vector3 player;
 
-    public float speed = 2.5f;
+    [SerializeField]
+    private float speed = 2.5f;
+
+    [SerializeField]
+    private float enemy_maxhp = 40.0f;
+
+    private float enemy_hp;
+
+    [SerializeField]
+    private int add_score = 40;
+
+    [SerializeField]
+    private GameObject effect;
 
     void Start()
     {
         player = new Vector3(0.0f, 0.0f, 0.0f);
+        enemy_hp = enemy_maxhp;
     }
 
     void Update()
@@ -23,6 +36,8 @@ public class enemy4_cs : MonoBehaviour {
 
         if (e_p_dis < 10.0f)
         {
+            GameObject.Find("Score").GetComponent<score>().addScore(add_score);
+            GameObject.Instantiate(effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
             Destroy(this.gameObject);
         }
     }

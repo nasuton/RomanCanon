@@ -295,15 +295,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 715296955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b6cf7533fdcf1b43a6d861c0becc605, type: 3}
+  m_Script: {fileID: 11500000, guid: bcb498ae9ff30334298ea4924865d66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
-  - {fileID: 1000012142244412, guid: 87886b21bddd898428d5c87e83789fb3, type: 2}
-  - {fileID: 1000012171775442, guid: e6d0a8b93fee2c047a5bd29c11574d66, type: 2}
-  - {fileID: 1000012930326574, guid: 4d1ff88a77dd8244bb6d817ecb171ad1, type: 2}
-  - {fileID: 1000010360965262, guid: a167949674dcfc24bacceaadfd49ef50, type: 2}
-  - {fileID: 1000013335003582, guid: 9962310c4d63f2c4a88e768089451465, type: 2}
+  - {fileID: 1000011983629976, guid: 87886b21bddd898428d5c87e83789fb3, type: 2}
+  - {fileID: 1000013766823282, guid: e6d0a8b93fee2c047a5bd29c11574d66, type: 2}
+  - {fileID: 1000011165506256, guid: 4d1ff88a77dd8244bb6d817ecb171ad1, type: 2}
+  - {fileID: 1000012852772826, guid: a167949674dcfc24bacceaadfd49ef50, type: 2}
+  - {fileID: 1000013974093076, guid: 9962310c4d63f2c4a88e768089451465, type: 2}
   interval: 1
   radius: 30
 --- !u!4 &715296957
@@ -394,7 +394,7 @@ GameObject:
   - 114: {fileID: 1396560394}
   - 114: {fileID: 1396560393}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -481,7 +481,7 @@ GameObject:
   - 114: {fileID: 1751948748}
   - 114: {fileID: 1751948750}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,7 +557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255a16fec6da4ff48810df0f6a26d0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_Count: 40
+  max_Count: 20
+  countTimer: 0
 --- !u!1 &2044552701
 GameObject:
   m_ObjectHideFlags: 0
