@@ -6,7 +6,6 @@ public class timer : MonoBehaviour
     [SerializeField]
     private float max_Count = 40.0f;
 
-   
     public float countTimer;
 
     void Awake()
@@ -29,7 +28,6 @@ public class timer : MonoBehaviour
             GetComponent<Text>().text = "Time " + countTimer.ToString("F2");
         }
 
-        //Debug.Log(countTimer);
     }
 
 }

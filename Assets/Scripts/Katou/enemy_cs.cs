@@ -9,7 +9,8 @@ public enum EnemyState
 }
 
 
-public class enemy_cs : MonoBehaviour {
+public class enemy_cs : MonoBehaviour
+{
 
     private Vector3 player;
 
@@ -35,6 +36,15 @@ public class enemy_cs : MonoBehaviour {
 
     void Update()
     {
+
+
+
+        
+
+    }
+
+    void Mvoe()
+    {
         Quaternion targetRotation = Quaternion.LookRotation(player - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 1.0f);
 
@@ -44,9 +54,20 @@ public class enemy_cs : MonoBehaviour {
 
         if (e_p_dis < 10.0f)
         {
-            GameObject.Find("Score").GetComponent<score>().addScore(add_score);
-            GameObject.Instantiate(effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-            Destroy(this.gameObject);
+            Attack();
         }
     }
+
+    void Attack()
+    {
+
+    }
+
+    void Explode()
+    {
+        GameObject.Find("Score").GetComponent<score>().addScore(add_score);
+        GameObject.Instantiate(effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+        Destroy(this.gameObject);
+    }
+
 }
