@@ -28,6 +28,8 @@ public class TitleRoot : MonoBehaviour
 
     private int nowSelectCustomPartsNum = 0;
 
+
+    //部品
     [SerializeField]
     GameObject PartsType = null;
 
@@ -35,6 +37,23 @@ public class TitleRoot : MonoBehaviour
     GameObject WeaponType = null;
 
     public LayerMask mask;
+
+    [SerializeField]
+    ChangeStatusBar changeStatusBar = null;
+
+    [SerializeField]
+    GameObject AnserBar = null;
+
+    private bool canAnser = false;
+
+    [SerializeField]
+    GameObject SelectedCustomPartFlame = null;
+
+    [SerializeField]
+    GameObject SelectedPartsFlame = null;
+
+    [SerializeField]
+    GameObject NowSelectPartsFlame = null;
 
     void Start()
     {
@@ -46,6 +65,7 @@ public class TitleRoot : MonoBehaviour
         SetWeaponStatus();
     }
 
+    //銃のタイプを設定
     public void SetWeaponType(int num)
     {
         selectWeaponType = num;
@@ -56,7 +76,7 @@ public class TitleRoot : MonoBehaviour
         customParts.SetActive(true);
         titleText.SetActive(false);
     }
-
+    //銃のステータスをもらいます
     void SetWeaponStatus()
     {
         float[] state = new float[5];
@@ -73,10 +93,53 @@ public class TitleRoot : MonoBehaviour
                 state[k] = obj.GetComponent<NormalPartsStatus>().status[k];
 
             for (int num = 0; num < 5; ++num)
+            {
                 status[num] += state[num];
+                changeStatusBar.NowStatus[num] = (int)status[num];
+                changeStatusBar.IsChange = true;
+            }
         }
     }
 
+    //変更後の銃のステータスを入れます
+    void SetAfterStatus(int nowCustomNum, int nowPartsNum)
+    {
+        float[] state = new float[5];
+        var status = changeStatusBar.AfterStatus;
+
+        for (int i = 0; i < 5; ++i)
+            status[i] = 0;
+
+        for (int i = 0; i < 5; ++i)
+        {
+            if (i != nowCustomNum)
+            {
+                var obj = Resources.Load("GunPartsStatus/Weapon" + selectWeaponType.ToString() + "/Custom" + i.ToString()
+                                          + "/Parts" + selectCustomPartsNum[i].ToString()) as GameObject;
+                for (int k = 0; k < 5; ++k)
+                    state[k] = obj.GetComponent<NormalPartsStatus>().status[k];
+            }
+
+            else
+            {
+                var obj = Resources.Load("GunPartsStatus/Weapon" + selectWeaponType.ToString() + "/Custom" + nowCustomNum.ToString()
+                                       + "/Parts" + nowPartsNum.ToString()) as GameObject;
+                for (int k = 0; k < 5; ++k)
+                    state[k] = obj.GetComponent<NormalPartsStatus>().status[k];
+            }
+
+            for (int num = 0; num < 5; ++num)
+            {
+                status[num] += (int)state[num];
+                changeStatusBar.AfterStatus[num] = status[num];
+                changeStatusBar.IsChangeAfter = true;
+            }
+
+        }
+
+    }
+
+    //0~5で数値化されたcustomするパーツのどこを変更するか決めます
     public void SelectCustomPartsType(int num)
     {
         if (isSelectCustomParts != false) return;
@@ -85,27 +148,22 @@ public class TitleRoot : MonoBehaviour
         PartsType.SetActive(true);
     }
 
+    //customパーツを選択後0~3の部品の中で部品を選びます
     public void SelectCustomParts(int num)
     {
-        isSelectCustomParts = false;
         selectCustomPartsNum[nowSelectCustomPartsNum] = num;
-        PartsType.SetActive(false);
         SetWeaponStatus();
     }
 
+    //Parts選択画面からCustomPartsを選択する画面に戻ります
     public void BackSelectCustomParts()
     {
+        if (isSelectCustomParts != true) return;
         isSelectCustomParts = false;
         PartsType.SetActive(false);
-
-        var obj = GameObject.Find("WeaponType");
-        if (isEnd == false)
-        {
-            isEnd = true;
-            SceneChanger.Instance.LoadLevel("GameMain", 1.0f);
-        }
     }
 
+    //武器選択に戻ります
     public void BackSelectWeaponType()
     {
         foreach (var ui in weaponButton)
@@ -113,9 +171,15 @@ public class TitleRoot : MonoBehaviour
         isShowCustomParts = false;
         customParts.SetActive(false);
         titleText.SetActive(true);
+
+        for (int i = 0; i < 6; ++i)
+        {
+            selectCustomPartsNum[i] = 0;
+        }
     }
 
-    public void startButtonOfPushed()
+    //武器選択からGameMainに移行します
+    public void StartButtonOfPushed()
     {
         if (isEnd == true) return;
 
@@ -128,49 +192,96 @@ public class TitleRoot : MonoBehaviour
 
     void Update()
     {
+        if (isShowCustomParts == false)
+            ChoiseWeapon();
+
+        else if (isSelectCustomParts == false)
+            ChoiseCustomParts();
+
+        else if (isSelectCustomParts == true)
+            ChoiseParts();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isShowCustomParts == false)
-                ChoiseWeapon();
-
-            else if (isSelectCustomParts == false)
-                ChoiseCustomParts();
-
-            else if (isSelectCustomParts == true)
-                ChoiseParts();
+            if (HitRay("GunBase"))
+                StartButtonOfPushed();
+        }
+    }
+    //武器選択を行います
+    private void ChoiseWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (HitRay("MiniGun"))
+                SetWeaponType(0);
+            else if (HitRay("RocketRauncher"))
+                SetWeaponType(1);
+            else if (HitRay("RailGun"))
+                SetWeaponType(2);
         }
     }
 
-    private void ChoiseWeapon()
-    {
-        if (HitRay("MiniGun"))
-            SetWeaponType(0);
-        else if (HitRay("RocketRauncher"))
-            SetWeaponType(1);
-        else if (HitRay("RailGun"))
-            SetWeaponType(2);
-    }
-
+    //CustomParts選択を行います
     private void ChoiseCustomParts()
     {
         for (int i = 0; i < 6; ++i)
         {
             if (HitRay("PartsBase" + i.ToString()))
-                SelectCustomPartsType(i);
+            {
+                SelectedCustomPartFlame.transform.parent = GameObject.Find("PartsBase" + i.ToString()).transform;
+                SelectedCustomPartFlame.transform.localPosition = new Vector3(0, 0, 0);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            if (HitRay("BackGameSelect"))
+                BackSelectWeaponType();
+
+            for (int i = 0; i < 6; ++i)
+            {
+                if (HitRay("PartsBase" + i.ToString()))
+                {
+                    SelectCustomPartsType(i);
+                    SelectedPartsFlame.transform.parent = GameObject.Find("Parts" + selectCustomPartsNum[i].ToString()).transform;
+                    SelectedPartsFlame.transform.localPosition = new Vector3(0, 0, 0);
+                }
+            }
         }
     }
-
+    //Parts選択を行います
     private void ChoiseParts()
     {
         for (int i = 0; i < 4; ++i)
         {
             if (HitRay("Parts" + i.ToString()))
             {
-                SelectCustomParts(i);
+                NowSelectPartsFlame.transform.parent = GameObject.Find("Parts" + i.ToString()).transform;
+                NowSelectPartsFlame.transform.localPosition = new Vector3(0, 0, 0);
+
+                SetAfterStatus(nowSelectCustomPartsNum, i);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (HitRay("BackGameSelect"))
+                BackSelectCustomParts();
+
+            for (int i = 0; i < 4; ++i)
+            {
+                if (HitRay("Parts" + i.ToString()))
+                {
+                    SelectedPartsFlame.transform.parent = GameObject.Find("Parts" + i.ToString()).transform;
+                    SelectedPartsFlame.transform.localPosition = new Vector3(0, 0, 0);
+                    SelectCustomParts(i);
+                }
             }
         }
     }
 
+    //Rayを飛ばして当たり判定を行います
     public bool HitRay(string hitName)
     {
         Ray ray = new Ray(transform.position, transform.forward);
@@ -178,8 +289,6 @@ public class TitleRoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit) == false) return false;
         if (hit.collider.gameObject.name != hitName) return false;
-
-        Debug.Log(hit.collider.gameObject.name);
 
         return true;
     }
