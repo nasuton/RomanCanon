@@ -22,12 +22,12 @@ public class Attack : MonoBehaviour {
        
         if (weapon_type == (int)WeaponType.MINI_GUN)
         {
-            other.GetComponent<EnemyManager>().hp -= GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
+            other.GetComponent<enemy_state>().Hp -= (int)GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
             Destroy(this);
         }
         if (weapon_type == (int)WeaponType.ROCKET_LAUNCHER)
         {
-            other.GetComponent<EnemyManager>().hp -= GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
+            other.GetComponent<enemy_state>().Hp -= (int)GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
             Destroy(this);
         }
     }
@@ -38,7 +38,7 @@ public class Attack : MonoBehaviour {
         {
             if(0 > damage_count)
             {
-                other.GetComponent<EnemyManager>().hp -= GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
+                other.GetComponent<enemy_state>().Hp -= (int)GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
                 damage_count = 1 - GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[3];
             }
             damage_count -= Time.deltaTime;
