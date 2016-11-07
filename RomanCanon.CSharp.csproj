@@ -149,9 +149,12 @@
     <Compile Include="Assets\Scripts\Katou\enemy_cs.cs" />
     <Compile Include="Assets\Scripts\Katou\score.cs" />
     <Compile Include="Assets\Scripts\Katou\spawner_cs.cs" />
+    <Compile Include="Assets\Scripts\Katou\status.cs" />
     <Compile Include="Assets\Scripts\Katou\timer.cs" />
+    <Compile Include="Assets\Scripts\Nomoto\ChangeStatusBar.cs" />
     <Compile Include="Assets\Scripts\Nomoto\DeadCounter.cs" />
     <Compile Include="Assets\Scripts\Nomoto\FriezeGaugeController.cs" />
+    <Compile Include="Assets\Scripts\Nomoto\GaugeController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\BulletOfRailGun.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\DefaultGunController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\GunManager\GunManager.cs" />
@@ -168,6 +171,7 @@
     <Compile Include="Assets\Scripts\Nomoto\Status\DownPartsStatus.cs" />
     <Compile Include="Assets\Scripts\Nomoto\Status\NormalPartsStatus.cs" />
     <Compile Include="Assets\Scripts\Nomoto\Status\RomanPartsStauts.cs" />
+    <Compile Include="Assets\Scripts\Nomoto\StatusGaugeController.cs" />
     <Compile Include="Assets\Scripts\Nomoto\TitleRoot.cs" />
     <Compile Include="Assets\Scripts\Nomoto\Utilitys\JsonNode.cs" />
     <Compile Include="Assets\Scripts\Nomoto\Utilitys\MiniJson.cs" />
