@@ -190,7 +190,7 @@ public class TitleRoot : MonoBehaviour
         var obj = GameObject.Find("WeaponType");
         obj.GetComponent<WeaponTypeManager>().asset.WeaponNum = selectWeaponType;
         isEnd = true;
-        SceneChanger.Instance.LoadLevel("GameMain", 1.0f);
+        SceneChanger.Instance.LoadLevel("Result", 1.0f);
     }
 
 

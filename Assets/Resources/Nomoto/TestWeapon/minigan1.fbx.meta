@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d94850901e287db4a85f5694666444b3
-timeCreated: 1478340486
+guid: 290f4fcab366d3d418fbe4963efbf8aa
+timeCreated: 1478512483
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -24,7 +24,7 @@ ModelImporter:
     100032: left
     100034: //RootNode
     100036: pasted__pCube4
-    100038: pasted__pCube4 1
+    100038: pasted__pCube5
     100040: pasted__pCylinder12
     100042: pasted__pCylinder5
     100044: pasted__pCylinder5 1
@@ -41,13 +41,13 @@ ModelImporter:
     100066: pCylinder11
     100068: pCylinder11 1
     100070: pCylinder12
-    100072: pCylinder6
-    100074: pCylinder7
-    100076: pCylinder7 1
-    100078: pCylinder8
-    100080: pCylinder8 1
-    100082: pCylinder9
-    100084: pCylinder9 1
+    100072: pCylinder13
+    100074: pCylinder14
+    100076: pCylinder6
+    100078: pCylinder7
+    100080: pCylinder7 1
+    100082: pCylinder8
+    100084: pCylinder9
     100086: pPipe3
     100088: pPipe4
     100090: pPipe5
@@ -89,7 +89,7 @@ ModelImporter:
     400032: left
     400034: //RootNode
     400036: pasted__pCube4
-    400038: pasted__pCube4 1
+    400038: pasted__pCube5
     400040: pasted__pCylinder12
     400042: pasted__pCylinder5
     400044: pasted__pCylinder5 1
@@ -106,13 +106,13 @@ ModelImporter:
     400066: pCylinder11
     400068: pCylinder11 1
     400070: pCylinder12
-    400072: pCylinder6
-    400074: pCylinder7
-    400076: pCylinder7 1
-    400078: pCylinder8
-    400080: pCylinder8 1
-    400082: pCylinder9
-    400084: pCylinder9 1
+    400072: pCylinder13
+    400074: pCylinder14
+    400076: pCylinder6
+    400078: pCylinder7
+    400080: pCylinder7 1
+    400082: pCylinder8
+    400084: pCylinder9
     400086: pPipe3
     400088: pPipe4
     400090: pPipe5
@@ -141,16 +141,16 @@ ModelImporter:
     2300006: hanten_group4_pCube2
     2300008: hanten_pCylinder7
     2300010: pasted__pCube4
-    2300012: pasted__pCube4 1
+    2300012: pasted__pCube5
     2300014: pasted__pCylinder12
     2300016: pCube6
     2300018: pCube6 1
     2300020: pCylinder12
-    2300022: pCylinder6
-    2300024: pCylinder8
-    2300026: pCylinder8 1
-    2300028: pCylinder9
-    2300030: pCylinder9 1
+    2300022: pCylinder13
+    2300024: pCylinder14
+    2300026: pCylinder6
+    2300028: pCylinder8
+    2300030: pCylinder9
     2300032: pPipe3
     2300034: pPipe4
     2300036: pPipe5
@@ -165,16 +165,16 @@ ModelImporter:
     3300006: hanten_group4_pCube2
     3300008: hanten_pCylinder7
     3300010: pasted__pCube4
-    3300012: pasted__pCube4 1
+    3300012: pasted__pCube5
     3300014: pasted__pCylinder12
     3300016: pCube6
     3300018: pCube6 1
     3300020: pCylinder12
-    3300022: pCylinder6
-    3300024: pCylinder8
-    3300026: pCylinder8 1
-    3300028: pCylinder9
-    3300030: pCylinder9 1
+    3300022: pCylinder13
+    3300024: pCylinder14
+    3300026: pCylinder6
+    3300028: pCylinder8
+    3300030: pCylinder9
     3300032: pPipe3
     3300034: pPipe4
     3300036: pPipe5
@@ -190,16 +190,16 @@ ModelImporter:
     4300008: pPipe7
     4300010: pPipe8
     4300012: pCylinder6
-    4300014: pCylinder8
-    4300016: pCylinder9
-    4300018: pCube6
-    4300020: pSphere2
-    4300022: pasted__pCube4
-    4300024: pCylinder8
-    4300026: pCylinder9
-    4300028: pCube6
-    4300030: pSphere2
-    4300032: pasted__pCube4
+    4300014: pCube6
+    4300016: pSphere2
+    4300018: pCylinder8
+    4300020: pCylinder9
+    4300022: pCube6
+    4300024: pSphere2
+    4300026: pasted__pCube4
+    4300028: pCylinder13
+    4300030: pasted__pCube5
+    4300032: pCylinder14
     4300034: pCylinder12
     4300036: pasted__pCylinder12
     4300038: hanten_pCylinder7

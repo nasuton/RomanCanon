@@ -3,28 +3,43 @@ using UnityEngine.UI;
 
 public class score : MonoBehaviour
 {
-    public int scoreCount;
+    private int scoreValue;
+
+    public int ScoreValue
+    {
+        get { return scoreValue; }
+        set { scoreValue = value; }
+    }
+
+    static GameObject _instance = null;
+
+    void Awake()
+    {
+        if (_instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            _instance = gameObject;
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
-        scoreCount = 0;
-        GetComponent<Text>().text = "Score " + scoreCount.ToString();
-    }
-
-    void Update()
-    {
-        
+        scoreValue = 0;
     }
 
     public void addScore(int _score)
     {
-        scoreCount += _score;
-        GetComponent<Text>().text = "Score " + scoreCount.ToString();
+        scoreValue += _score;
     }
 
     public int ReScore()
     {
-        return scoreCount;
+        return scoreValue;
     }
 
 }
