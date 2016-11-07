@@ -3,11 +3,11 @@ using System.Collections;
 
 public class enemy_state : MonoBehaviour
 {
-    private bool isDed;
-
-    private bool isDamage;
+    public bool isDed;
 
     private int hp = 100;
+
+    public GameObject effect;
 
     public int Hp
     {
@@ -18,12 +18,13 @@ public class enemy_state : MonoBehaviour
     void Start()
     {
         isDed = false;
-        isDamage = false;
     }
 
     void Update()
     {
         if (hp > 0) return;
+            //GameObject.Instantiate(effect, transform.position, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+            isDed = true;
             Destroy(this);
     }
 

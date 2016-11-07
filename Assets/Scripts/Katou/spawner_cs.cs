@@ -15,12 +15,17 @@ public class spawner_cs : MonoBehaviour {
     private float radius = 100.0f;
 
     //リスポーンする位置
+    [SerializeField]
     private Vector3[] spawn_pos = new Vector3[6];
 
     //リスポーンする際の角度
     private float[] angle = new float[6];
 
+    //ボスリスポーンするフラグ
     private bool boss_spawn;
+
+    //プレイヤーする位置
+    public Vector3 playerPos;
 
     void Awake()
     {
@@ -35,8 +40,8 @@ public class spawner_cs : MonoBehaviour {
 
             float radian = degree * Mathf.PI / 180.0f;
 
-            float x1 = Mathf.Cos(radian) * radius;
-            float z1 = Mathf.Sin(radian) * radius;
+            float x1 = Mathf.Cos(radian) * radius + playerPos.x;
+            float z1 = Mathf.Sin(radian) * radius + playerPos.z;
 
             spawn_pos[i] = new Vector3(x1, 0.0f, z1);
 
