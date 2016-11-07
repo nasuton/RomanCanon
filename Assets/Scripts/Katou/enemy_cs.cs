@@ -18,11 +18,6 @@ public class enemy_cs : MonoBehaviour
     private float speed = 1.0f;
 
     [SerializeField]
-    private float enemy_maxhp = 10;
-
-    private float enemy_hp;
-
-    [SerializeField]
     private int add_score = 10;
 
     [SerializeField]
@@ -31,15 +26,10 @@ public class enemy_cs : MonoBehaviour
     void Start()
     {
         player = new Vector3(0.0f, 0.0f, 0.0f);
-        enemy_hp = enemy_maxhp;
     }
 
     void Update()
-    {
-
-
-
-        
+    {        
 
     }
 
