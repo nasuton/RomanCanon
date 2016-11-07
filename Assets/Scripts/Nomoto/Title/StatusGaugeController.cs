@@ -15,6 +15,12 @@ public class StatusGaugeController : MonoBehaviour
 
     private bool isAnimation = false;
 
+    public  bool IsAnimaiton
+    {
+        get { return isAnimation; }
+        set { isAnimation = value; }
+    }
+
     [SerializeField]
     private int maxValue = 0;
 
@@ -62,26 +68,24 @@ public class StatusGaugeController : MonoBehaviour
 
     public void Set()
     {
-        isAnimation = true;
+        if (nowValue != afterValue)
+        {
+            if (afterValue > nowValue)
+            {
+                upPosBar.GetComponent<Image>().sprite =
+                    Resources.Load<Sprite>("Nomoto/TestUI/green/bar");
+                downPosBar.GetComponent<Image>().sprite =
+                    Resources.Load<Sprite>("Nomoto/TestUI/blue/bar");
+            }
 
-      //  if(nowValue != afterValue)
-        //{
-        //    if(afterValue > nowValue)
-        //    {
-        //        upPosBar.GetComponent<Image>().sprite =
-        //            Resources.Load<Sprite>("Nomoto/TestUI/bar_1");
-        //        downPosBar.GetComponent<Image>().sprite =
-        //            Resources.Load<Sprite>("Nomoto/TestUI/bar_1");
-        //    }
-
-        //    else
-        //    {
-        //        upPosBar.GetComponent<Image>().sprite =
-        //        Resources.Load<Sprite>("Nomoto/Test/bar_1");
-        //        downPosBar.GetComponent<Image>().sprite =
-        //            Resources.Load<Sprite>("Nomoto/Test/bar_1");
-        //    }
-        //}
+            else
+            {
+                upPosBar.GetComponent<Image>().sprite =
+                Resources.Load<Sprite>("Nomoto/TestUI/green/bar");
+                downPosBar.GetComponent<Image>().sprite =
+                    Resources.Load<Sprite>("Nomoto/TestUI/red/bar");
+            }
+        }
     }
 
     private void SetType()
@@ -96,7 +100,7 @@ public class StatusGaugeController : MonoBehaviour
 
     void Animation()
     {
-        if (isAnimation != true) return;
+        if (isAnimation == false) return;
 
         if( afterValue >= nowValue)
         {
@@ -109,6 +113,7 @@ public class StatusGaugeController : MonoBehaviour
             if (afterValue <= animationValue + nowValue)
             {
                 animationValue = 0;
+                isAnimation = false;
             }
         }
         else if (afterValue < nowValue)
@@ -122,6 +127,7 @@ public class StatusGaugeController : MonoBehaviour
             if (nowValue + animationValue < afterValue)
             {
                 animationValue = 0;
+                isAnimation = false;
             }
         }
     }

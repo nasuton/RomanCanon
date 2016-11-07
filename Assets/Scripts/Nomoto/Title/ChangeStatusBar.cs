@@ -40,7 +40,15 @@ public class ChangeStatusBar : MonoBehaviour
         set { isChangeAfter = value; }
     }
 
-    [SerializeField,Tooltip("各ステータスの最大値をいれてください")]
+    private bool isAnimation = false;
+
+    public bool IsAnimation
+    {
+        get { return isAnimation; }
+        set { isAnimation = value; }
+    }
+
+    [SerializeField, Tooltip("各ステータスの最大値をいれてください")]
     int[] MaxStatus = new int[5];
 
     void Start()
@@ -48,21 +56,25 @@ public class ChangeStatusBar : MonoBehaviour
         for (int i = 0; i < 5; ++i)
         {
             state[i].MaxValue = MaxStatus[i];
-        }  
+        }
     }
 
     void Update()
     {
         Change();
         ChangeAfter();
+        AnimationChangeAfter();
     }
 
     void Change()
     {
         if (isChange == false) return;
-            for (int i = 0; i < 5; ++i)
-                state[i].NowValue = nowStatus[i];
+        for (int i = 0; i < 5; ++i)
+        {
+            state[i].NowValue = nowStatus[i];
+        }
         isChange = false;
+
     }
 
     void ChangeAfter()
@@ -72,9 +84,19 @@ public class ChangeStatusBar : MonoBehaviour
         {
             state[i].AfterValue = afterStatus[i];
             state[i].Set();
+            state[i].IsAnimaiton = true;
         }
-            isChangeAfter = false;
+        isChangeAfter = false;
     }
 
+    void AnimationChangeAfter()
+    {
+        if (isAnimation == false) return;
+        for (int i = 0; i < 5; ++i)
+        {
+            state[i].IsAnimaiton = true;
+        }
+        isAnimation = false;
+    }
 
 }

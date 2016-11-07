@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MiniGunController : DefaultGunController
 {
-
     [SerializeField]
     GameObject friezeGauge = null;
 

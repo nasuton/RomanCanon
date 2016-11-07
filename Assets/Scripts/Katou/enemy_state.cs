@@ -1,27 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemy_state : MonoBehaviour {
-
+public class enemy_state : MonoBehaviour
+{
     private bool isDed;
 
     private bool isDamage;
 
-   	// Use this for initialization
-	void Start ()
+    private int hp = 100;
+
+    public int Hp
+    {
+        get { return hp; }
+        set { hp = value; }
+    }
+
+    void Start()
     {
         isDed = false;
         isDamage = false;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    void Update()
     {
-        if(isDed)
-        {
-            return;
-        }
-	}
+        if (hp > 0) return;
+            Destroy(this);
+    }
 
 
 
