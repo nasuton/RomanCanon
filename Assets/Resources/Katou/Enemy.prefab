@@ -23,6 +23,7 @@ GameObject:
   - 136: {fileID: 136000011820775788}
   - 23: {fileID: 23000010381838566}
   - 114: {fileID: 114000011518766924}
+  - 114: {fileID: 114000011247706186}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011983629976}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114000011247706186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011983629976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f072d8065ff4d49a4e1a0ec962c19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDed: 0
+  effect: {fileID: 1000013269147760, guid: 71f11975de60ffe4db816f6d09dbfb43, type: 2}
 --- !u!114 &114000011518766924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,9 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  enemy_hp: 10
   add_score: 10
-  effect: {fileID: 1000013269147760, guid: 71f11975de60ffe4db816f6d09dbfb43, type: 2}
 --- !u!136 &136000011820775788
 CapsuleCollider:
   m_ObjectHideFlags: 1
