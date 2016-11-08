@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+//ここではあくまでScoreを記録するだけ
+//Scoreの描画は新しいクラスを作ること
+
 public class score : MonoBehaviour
 {
     private int scoreValue;
@@ -31,15 +34,4 @@ public class score : MonoBehaviour
     {
         scoreValue = 0;
     }
-
-    public void addScore(int _score)
-    {
-        scoreValue += _score;
-    }
-
-    public int ReScore()
-    {
-        return scoreValue;
-    }
-
 }

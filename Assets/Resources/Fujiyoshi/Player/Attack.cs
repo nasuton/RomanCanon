@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+//処理がおかしいので確認してください
 public class Attack : MonoBehaviour {
     public enum WeaponType
     {

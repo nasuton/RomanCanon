@@ -120,6 +120,7 @@ MonoBehaviour:
   radius: 6
   offsetAngle: 0
   textObject: {fileID: 802983937}
+  backUI: {fileID: 1000010302049726, guid: 0636295951fbe5b4996a4e4e1c750d2f, type: 2}
 --- !u!4 &80879202
 Transform:
   m_ObjectHideFlags: 0
@@ -133,6 +134,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &223340635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 223340637}
+  - 114: {fileID: 223340636}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &223340636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 223340635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b72cfec74c62964a8f606276c67c57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &223340637
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 223340635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0077400208, y: -0.7261719, z: -0.072292805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &537576330
 GameObject:
   m_ObjectHideFlags: 0
