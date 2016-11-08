@@ -1,13 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum EnemyState
-{
-    Move,
-    Attack,
-}
-
-
 public class enemy_cs : MonoBehaviour
 {
 
@@ -21,11 +14,22 @@ public class enemy_cs : MonoBehaviour
 
     enemy_state state;
 
+    [SerializeField]
+    private int maxhp = 10;
+
+   public int MaxHp
+    {
+        get { return maxhp; }
+        set { maxhp = value; }
+    }
+
     void Start()
     {
         player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
 
         state = GetComponent<enemy_state>();
+        state.Hp = maxhp;
+        Debug.Log(state.Hp);
     }
 
     void Update()

@@ -11,20 +11,36 @@ public class boss_cs : MonoBehaviour {
     [SerializeField]
     private int add_score = 50;
 
+    enemy_state state;
+
+    [SerializeField]
+    private int maxhp = 50;
+
+    public int MaxHp
+    {
+        get { return maxhp; }
+        set { maxhp = value; }
+    }
+
     void Start()
     {
         player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
+        state = GetComponent<enemy_state>();
+        state.Hp = maxhp;
+        Debug.Log(state.Hp);
     }
 
     void Update()
     {
+        if (state.isDed) return;
+
         float e_p_dis = Vector3.SqrMagnitude(transform.position - player);
 
-        if (e_p_dis < 10.0f)
-        {
-            Attack();
-        }
-        else
+        //if (e_p_dis < 10.0f)
+        //{
+        //    Attack();
+        //}
+        //else
         {
             Move();
         }

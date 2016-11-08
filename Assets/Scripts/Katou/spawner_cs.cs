@@ -15,7 +15,6 @@ public class spawner_cs : MonoBehaviour {
     private float radius = 100.0f;
 
     //リスポーンする位置
-    [SerializeField]
     private Vector3[] spawn_pos = new Vector3[6];
 
     //リスポーンする際の角度
@@ -61,10 +60,8 @@ public class spawner_cs : MonoBehaviour {
 
             if (GameObject.Find("Timer").GetComponent<timer>().countTimer <= 30.0f && !boss_spawn)
             {
-
                 GameObject.Instantiate(enemy[4], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
                 boss_spawn = true;
-
             }
             else
             {
