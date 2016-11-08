@@ -34,11 +34,11 @@ public class enemy_cs : MonoBehaviour
         
         float e_p_dis = Vector3.SqrMagnitude(transform.position - player);
 
-        if (e_p_dis < 10.0f)
-        {
-            Attack();
-        }
-        else
+        //if (e_p_dis < 10.0f)
+        //{
+        //    Attack();
+        //}
+        //else
         {
             Move();
         }
