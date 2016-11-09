@@ -61,11 +61,12 @@ public class GunManager : MonoBehaviour
     [SerializeField]
     GameObject RomanGaugeBar = null;
 
+    [SerializeField]
+    GameObject AimDirection = null;
     void Start()
     {
         var type = GameObject.Find("WeaponType");
         weaponType = type.GetComponent<WeaponTypeManager>().asset.WeaponNum;
-
         MakeWeapon();
         MakeUI();
         rightPos = new Vector3(0, 0, 0);
@@ -78,6 +79,7 @@ public class GunManager : MonoBehaviour
         if(weaponType == (int)WeaponType.MINI_GUN)
         {
             friezeBar.SetActive(true);
+            
         }
 
         else if(weaponType == (int)WeaponType.RAIL_GUN)
@@ -93,16 +95,19 @@ public class GunManager : MonoBehaviour
         
         obj = (GameObject)Instantiate(weapon[weaponType],
                            new Vector3(0, 0, 0), Quaternion.identity);
-        obj.transform.parent = GameObject.Find("R_Hand").transform;
+        obj.transform.parent = GameObject.Find("WeaponAim").transform;
         obj.transform.localPosition = new Vector3(0, 0, 0);
         obj.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        
+        if (weaponType == (int)WeaponType.MINI_GUN)
+        {
+            obj.transform.localPosition = new Vector3(0, 1, -2);
+        }
     }
 
     void Update()
     {
-        obj.transform.LookAt(WeaponAim.transform.position);
-        transform.position = R_hand.transform.position;
+        obj.transform.forward = AimDirection.GetComponent<DrawAim>().aim_direction * 3;
+        transform.position = WeaponAim.transform.position;
         transform.LookAt(WeaponAim.transform.position);
     }
 

@@ -1,0 +1,274 @@
+fileFormatVersion: 2
+guid: d94850901e287db4a85f5694666444b3
+timeCreated: 1478340486
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group3
+    100002: group3 1
+    100004: group4
+    100006: group4 1
+    100008: hanten
+    100010: hanten1
+    100012: hanten1_group4_pCube1
+    100014: hanten1_pCylinder10
+    100016: hanten_group4_pasted__pCylinder5
+    100018: hanten_group4_pCube2
+    100020: hanten_pCylinder7
+    100022: housinn
+    100024: imagePlane1
+    100026: imagePlane2
+    100028: imagePlane3
+    100030: imagePlane4
+    100032: left
+    100034: //RootNode
+    100036: pasted__pCube4
+    100038: pasted__pCube4 1
+    100040: pasted__pCylinder12
+    100042: pasted__pCylinder5
+    100044: pasted__pCylinder5 1
+    100046: pasted__pCylinder5 2
+    100048: pasted__pCylinder5 3
+    100050: pCube1
+    100052: pCube1 1
+    100054: pCube2
+    100056: pCube2 1
+    100058: pCube6
+    100060: pCube6 1
+    100062: pCylinder10
+    100064: pCylinder10 1
+    100066: pCylinder11
+    100068: pCylinder11 1
+    100070: pCylinder12
+    100072: pCylinder6
+    100074: pCylinder7
+    100076: pCylinder7 1
+    100078: pCylinder8
+    100080: pCylinder8 1
+    100082: pCylinder9
+    100084: pCylinder9 1
+    100086: pPipe3
+    100088: pPipe4
+    100090: pPipe5
+    100092: pPipe6
+    100094: pPipe7
+    100096: pPipe8
+    100098: pSphere2
+    100100: pSphere2 1
+    100102: transform1
+    100104: transform1 1
+    100106: transform10
+    100108: transform11
+    100110: transform12
+    100112: transform2
+    100114: transform2 1
+    100116: transform3
+    100118: transform4
+    100120: transform5
+    100122: transform6
+    100124: transform7
+    100126: transform8
+    100128: transform9
+    400000: group3
+    400002: group3 1
+    400004: group4
+    400006: group4 1
+    400008: hanten
+    400010: hanten1
+    400012: hanten1_group4_pCube1
+    400014: hanten1_pCylinder10
+    400016: hanten_group4_pasted__pCylinder5
+    400018: hanten_group4_pCube2
+    400020: hanten_pCylinder7
+    400022: housinn
+    400024: imagePlane1
+    400026: imagePlane2
+    400028: imagePlane3
+    400030: imagePlane4
+    400032: left
+    400034: //RootNode
+    400036: pasted__pCube4
+    400038: pasted__pCube4 1
+    400040: pasted__pCylinder12
+    400042: pasted__pCylinder5
+    400044: pasted__pCylinder5 1
+    400046: pasted__pCylinder5 2
+    400048: pasted__pCylinder5 3
+    400050: pCube1
+    400052: pCube1 1
+    400054: pCube2
+    400056: pCube2 1
+    400058: pCube6
+    400060: pCube6 1
+    400062: pCylinder10
+    400064: pCylinder10 1
+    400066: pCylinder11
+    400068: pCylinder11 1
+    400070: pCylinder12
+    400072: pCylinder6
+    400074: pCylinder7
+    400076: pCylinder7 1
+    400078: pCylinder8
+    400080: pCylinder8 1
+    400082: pCylinder9
+    400084: pCylinder9 1
+    400086: pPipe3
+    400088: pPipe4
+    400090: pPipe5
+    400092: pPipe6
+    400094: pPipe7
+    400096: pPipe8
+    400098: pSphere2
+    400100: pSphere2 1
+    400102: transform1
+    400104: transform1 1
+    400106: transform10
+    400108: transform11
+    400110: transform12
+    400112: transform2
+    400114: transform2 1
+    400116: transform3
+    400118: transform4
+    400120: transform5
+    400122: transform6
+    400124: transform7
+    400126: transform8
+    400128: transform9
+    2300000: hanten1_group4_pCube1
+    2300002: hanten1_pCylinder10
+    2300004: hanten_group4_pasted__pCylinder5
+    2300006: hanten_group4_pCube2
+    2300008: hanten_pCylinder7
+    2300010: pasted__pCube4
+    2300012: pasted__pCube4 1
+    2300014: pasted__pCylinder12
+    2300016: pCube6
+    2300018: pCube6 1
+    2300020: pCylinder12
+    2300022: pCylinder6
+    2300024: pCylinder8
+    2300026: pCylinder8 1
+    2300028: pCylinder9
+    2300030: pCylinder9 1
+    2300032: pPipe3
+    2300034: pPipe4
+    2300036: pPipe5
+    2300038: pPipe6
+    2300040: pPipe7
+    2300042: pPipe8
+    2300044: pSphere2
+    2300046: pSphere2 1
+    3300000: hanten1_group4_pCube1
+    3300002: hanten1_pCylinder10
+    3300004: hanten_group4_pasted__pCylinder5
+    3300006: hanten_group4_pCube2
+    3300008: hanten_pCylinder7
+    3300010: pasted__pCube4
+    3300012: pasted__pCube4 1
+    3300014: pasted__pCylinder12
+    3300016: pCube6
+    3300018: pCube6 1
+    3300020: pCylinder12
+    3300022: pCylinder6
+    3300024: pCylinder8
+    3300026: pCylinder8 1
+    3300028: pCylinder9
+    3300030: pCylinder9 1
+    3300032: pPipe3
+    3300034: pPipe4
+    3300036: pPipe5
+    3300038: pPipe6
+    3300040: pPipe7
+    3300042: pPipe8
+    3300044: pSphere2
+    3300046: pSphere2 1
+    4300000: pPipe3
+    4300002: pPipe4
+    4300004: pPipe5
+    4300006: pPipe6
+    4300008: pPipe7
+    4300010: pPipe8
+    4300012: pCylinder6
+    4300014: pCylinder8
+    4300016: pCylinder9
+    4300018: pCube6
+    4300020: pSphere2
+    4300022: pasted__pCube4
+    4300024: pCylinder8
+    4300026: pCylinder9
+    4300028: pCube6
+    4300030: pSphere2
+    4300032: pasted__pCube4
+    4300034: pCylinder12
+    4300036: pasted__pCylinder12
+    4300038: hanten_pCylinder7
+    4300040: hanten_group4_pCube2
+    4300042: hanten_group4_pasted__pCylinder5
+    4300044: hanten1_group4_pCube1
+    4300046: hanten1_pCylinder10
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

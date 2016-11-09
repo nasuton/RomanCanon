@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//処理がおかしいので確認してください
+
 public class Attack : MonoBehaviour {
     public enum WeaponType
     {
@@ -19,10 +19,12 @@ public class Attack : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-       
+        if (other == null) return;
+
         if (weapon_type == (int)WeaponType.MINI_GUN)
         {
             other.GetComponent<enemy_state>().Hp -= (int)GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
+            GameObject.Find("RomanBar").GetComponent<RomanGauge>().chargeRomenGaouge(10);
             Destroy(this);
         }
         if (weapon_type == (int)WeaponType.ROCKET_LAUNCHER)
@@ -36,13 +38,13 @@ public class Attack : MonoBehaviour {
     {
         if (weapon_type == (int)WeaponType.RAIL_GUN)
         {
-            if(0 > damage_count)
+            if (0 > damage_count)
             {
                 other.GetComponent<enemy_state>().Hp -= (int)GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[0];
                 damage_count = 1 - GameObject.Find("WeaponType").GetComponent<NormalPartsStatus>().Status[3];
             }
             damage_count -= Time.deltaTime;
-           
+
         }
     }
 }
