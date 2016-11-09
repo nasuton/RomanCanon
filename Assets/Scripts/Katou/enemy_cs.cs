@@ -29,7 +29,7 @@ public class enemy_cs : MonoBehaviour
 
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        Debug.Log(state.Hp);
+        //Debug.Log(state.Hp);
     }
 
     void Update()

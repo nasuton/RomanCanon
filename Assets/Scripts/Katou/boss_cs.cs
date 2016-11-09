@@ -14,7 +14,7 @@ public class boss_cs : MonoBehaviour {
     enemy_state state;
 
     [SerializeField]
-    private int maxhp = 50;
+    private int maxhp = 30;
 
     public int MaxHp
     {
@@ -27,7 +27,7 @@ public class boss_cs : MonoBehaviour {
         player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        Debug.Log(state.Hp);
+        //Debug.Log(state.Hp);
     }
 
     void Update()
