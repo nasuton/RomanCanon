@@ -5,21 +5,19 @@ public class MiniGunController : DefaultGunController
 {
 
     [SerializeField]
-    GameObject friezeGauge = null;
+    public GameObject friezeGauge = null;
 
     [SerializeField]
-    float defaultWaitTimeOfShot = 0.5f;
+    float defaultWaitTimeOfShot = 0.1f;
 
     [SerializeField]
     float maxWaitTimeOfShot = 65.0f;
 
-    [SerializeField]
-    GameObject aimDirection;
+    
 
     void Start()
     {
         setWaitTimeOfShot(defaultWaitTimeOfShot,maxWaitTimeOfShot);
-        friezeGauge = GameObject.Find("FriezeGauge");
         StartCoroutine(Shot());
     }
 
@@ -27,9 +25,9 @@ public class MiniGunController : DefaultGunController
     {
         GameObject obj = (GameObject)Instantiate(bullet, new Vector3(0, 0, 0), Quaternion.identity);
         Vector3 force;
-        force = transform.forward * speed;
+        force = 1000 * transform.forward * speed;
         obj.GetComponent<VectorMover>().MoveVec = force;
-        obj.transform.position = transform.position + transform.forward * 7;
+        obj.transform.position = transform.position + transform.forward * 5;
         
     }
 
@@ -37,15 +35,14 @@ public class MiniGunController : DefaultGunController
     {
         while (true)
         {
-            if (Input.GetKey(KeyCode.Space) && friezeGauge.GetComponent<FriezeGaugeController>().CanShot == true)
+            if (Input.GetMouseButton(0) && friezeGauge.GetComponent<FriezeGaugeController>().CanShot == true)
             {
                 MakeBullet();
                 friezeGauge.GetComponent<FriezeGaugeController>().IsShoted = true;
 
-                Debug.Log(waitTimeOfShot);
-
-                yield return new WaitForSeconds(waitTimeOfShot);
+                yield return new WaitForSeconds(0.05f);
             }
+            
             yield return 0;
         }
     }

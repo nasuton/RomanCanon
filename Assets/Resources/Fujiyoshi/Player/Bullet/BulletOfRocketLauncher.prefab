@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2322518}
   - 114: {fileID: 11484888}
   - 114: {fileID: 11496530}
+  - 114: {fileID: 114000010101587740}
   m_Layer: 0
   m_Name: BulletOfRocketLauncher
   m_TagString: Untagged
@@ -89,7 +90,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 175326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986e10e4f342afa4f96c1c0e69ada94c, type: 3}
+  m_Script: {fileID: 11500000, guid: d9dae17879f994c49a896be9d4e9e447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &13545676
@@ -115,3 +116,14 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 175326}
   m_IsPrefabParent: 1
+--- !u!114 &114000010101587740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3f815b2a0020749b00216ab522ac9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
