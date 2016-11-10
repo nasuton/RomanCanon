@@ -56,6 +56,26 @@ public class TitleRoot : MonoBehaviour
 
 
     bool isHitRayParts = false;
+
+
+    bool isAnimation = false;
+
+    private enum TitleAnimationType
+    {
+        NONE,
+        OPEN_SELECT_CUSTOM,
+        CLOSE_SELECT_CUSTOM,
+        OPEN_PARTS_CUSTOM,
+        CLOSE_PARTS_CUSTOM
+    }
+
+    TitleAnimationType animationType;
+
+    Vector3 customBarSize;
+
+    Vector3 partsBarSize;
+
+
     void Start()
     {
         for (int i = 0; i < 6; ++i)
@@ -64,6 +84,12 @@ public class TitleRoot : MonoBehaviour
         }
 
         SetWeaponStatus();
+
+        animationType = TitleAnimationType.NONE;
+        customBarSize = customParts.transform.localScale;
+        customParts.transform.localScale = new Vector3(customBarSize.x, 0, customBarSize.z);
+        partsBarSize = PartsType.transform.localScale;
+        PartsType.transform.localScale = new Vector3(partsBarSize.x, 0, partsBarSize.z);
     }
 
     //銃のタイプを設定
@@ -77,6 +103,10 @@ public class TitleRoot : MonoBehaviour
         customParts.SetActive(true);
         titleText.SetActive(false);
         SetWeaponStatus();
+
+        isAnimation = true;
+        animationType = TitleAnimationType.OPEN_SELECT_CUSTOM;
+
     }
     //銃のステータスをもらいます
     void SetWeaponStatus()
@@ -103,6 +133,24 @@ public class TitleRoot : MonoBehaviour
             changeStatusBar.IsChange = true;
             changeStatusBar.IsChangeAfter = true;
         }
+
+        {
+            var obj = Resources.Load("GunPartsStatus/Weapon" + selectWeaponType.ToString() + "/Custom5/Parts"
+                                     + selectCustomPartsNum[5].ToString()) as GameObject;
+
+            RomanCanonStatus stateObj = obj.GetComponent<RomanCanonStatus>();
+            RomanCanonStatus weaponRomanState = WeaponType.GetComponent<RomanCanonStatus>();
+            weaponRomanState = stateObj;
+
+            DownPartsStatus downState = obj.GetComponent<DownPartsStatus>();
+            DownPartsStatus weaponDownState = WeaponType.GetComponent<DownPartsStatus>();
+            weaponDownState = downState;
+
+            RomanPartsStauts romanState = obj.GetComponent<RomanPartsStauts>();
+            RomanPartsStauts weaponRomanPartsState = WeaponType.GetComponent<RomanPartsStauts>();
+            weaponRomanPartsState = romanState;
+        }
+
     }
 
     //変更後の銃のステータスを入れます
@@ -150,6 +198,9 @@ public class TitleRoot : MonoBehaviour
         isSelectCustomParts = true;
         nowSelectCustomPartsNum = num;
         PartsType.SetActive(true);
+
+        isAnimation = true;
+        animationType = TitleAnimationType.OPEN_PARTS_CUSTOM;
     }
 
     //customパーツを選択後0~3の部品の中で部品を選びます
@@ -164,22 +215,27 @@ public class TitleRoot : MonoBehaviour
     {
         if (isSelectCustomParts != true) return;
         isSelectCustomParts = false;
-        PartsType.SetActive(false);
+
+        isAnimation = true;
+        animationType = TitleAnimationType.CLOSE_PARTS_CUSTOM;
     }
 
     //武器選択に戻ります
     public void BackSelectWeaponType()
     {
-        foreach (var ui in weaponButton)
-            ui.SetActive(true);
         isShowCustomParts = false;
-        customParts.SetActive(false);
-        titleText.SetActive(true);
-
+        isAnimation = true;
+        animationType = TitleAnimationType.CLOSE_SELECT_CUSTOM;
         for (int i = 0; i < 6; ++i)
         {
             selectCustomPartsNum[i] = 0;
         }
+
+        isAnimation = true;
+        animationType = TitleAnimationType.CLOSE_SELECT_CUSTOM;
+        titleText.SetActive(true);
+        foreach (var ui in weaponButton)
+            ui.SetActive(true);
     }
 
     //武器選択からGameMainに移行します
@@ -196,6 +252,12 @@ public class TitleRoot : MonoBehaviour
 
     void Update()
     {
+        if (isEnd == true) return;
+
+        UpdateAnimation();
+
+        if (isAnimation == true) return;
+
         if (isShowCustomParts == false)
             ChoiseWeapon();
 
@@ -211,6 +273,60 @@ public class TitleRoot : MonoBehaviour
                 StartButtonOfPushed();
         }
     }
+
+    void UpdateAnimation()
+    {
+        if (isAnimation == false) return;
+
+        if (animationType == TitleAnimationType.OPEN_SELECT_CUSTOM)
+        {
+            customParts.transform.localScale = new Vector3(customBarSize.x,
+                                                           customParts.transform.localScale.y + customBarSize.y * Time.deltaTime * 1.5f,
+                                                           customBarSize.z);
+
+            if (customParts.transform.localScale.y <= customBarSize.y) return;
+            isAnimation = false;
+            customParts.transform.localScale = customBarSize;
+        }
+        else if (animationType == TitleAnimationType.CLOSE_SELECT_CUSTOM)
+        {
+            customParts.transform.localScale = new Vector3(customBarSize.x,
+                                                           customParts.transform.localScale.y - customBarSize.y * Time.deltaTime * 1.5f, 
+                                                           customBarSize.z);
+
+            if (customParts.transform.localScale.y >= 0) return;
+
+            isAnimation = false;
+            customParts.transform.localScale = new Vector3(customBarSize.x, 0, customBarSize.z);
+            customParts.SetActive(false);
+        }
+
+        else if (animationType == TitleAnimationType.OPEN_PARTS_CUSTOM)
+        {
+            PartsType.transform.localScale
+                = new Vector3(partsBarSize.x,
+                              PartsType.transform.localScale.y + partsBarSize.y * Time.deltaTime * 1.5f,
+                              partsBarSize.z);
+
+            if (PartsType.transform.localScale.y <= partsBarSize.y) return;
+                isAnimation = false;
+            PartsType.transform.localScale = new Vector3(partsBarSize.x, partsBarSize.y, partsBarSize.z);
+        }
+
+        else if (animationType == TitleAnimationType.CLOSE_PARTS_CUSTOM)
+        {
+            PartsType.transform.localScale
+                = new Vector3(partsBarSize.x,
+                               PartsType.transform.localScale.y - partsBarSize.y * Time.deltaTime * 1.5f,
+                              partsBarSize.z);
+
+            if (PartsType.transform.localScale.y >= 0) return;
+            isAnimation = false;
+            PartsType.transform.localScale = new Vector3(partsBarSize.x, partsBarSize.y, partsBarSize.z);
+            PartsType.SetActive(false);
+        }
+    }
+
     //武器選択を行います
     private void ChoiseWeapon()
     {
