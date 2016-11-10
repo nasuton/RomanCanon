@@ -207,7 +207,7 @@ public class TitleRoot : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (HitRay("GunBase"))
+            if (HitRay("GunImage"))
                 StartButtonOfPushed();
         }
     }
