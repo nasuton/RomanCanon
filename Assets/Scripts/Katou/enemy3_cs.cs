@@ -28,20 +28,19 @@ public class enemy3_cs : MonoBehaviour
         player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        //Debug.Log(state.Hp);
     }
 
     void Update()
     {
         if (state.isDed) return;
 
-        float e_p_dis = Vector3.SqrMagnitude(transform.position - player);
+        float e_p_dis = Vector3.Distance(transform.position, player);
 
-        //if (e_p_dis < 10.0f)
-        //{
-        //    Attack();
-        //}
-        //else
+        if(75 <= e_p_dis)
+        {
+
+        }
+        else
         {
             Move();
         }

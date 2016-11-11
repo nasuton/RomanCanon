@@ -27,7 +27,7 @@ public class enemy4_cs : MonoBehaviour {
         player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        //Debug.Log(state.Hp);
+        
     }
 
     void Update()
