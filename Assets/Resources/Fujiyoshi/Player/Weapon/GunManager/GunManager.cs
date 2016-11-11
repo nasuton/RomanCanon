@@ -95,12 +95,16 @@ public class GunManager : MonoBehaviour
         
         obj = (GameObject)Instantiate(weapon[weaponType],
                            new Vector3(0, 0, 0), Quaternion.identity);
+        if (weaponType == (int)WeaponType.MINI_GUN)
+        {
+            obj.GetComponent<MiniGunController>().FriezeGauge = friezeBar;
+        }
         obj.transform.parent = GameObject.Find("WeaponAim").transform;
         obj.transform.localPosition = new Vector3(0, 0, 0);
         obj.transform.localRotation = Quaternion.Euler(0, 0, 0);
         if (weaponType == (int)WeaponType.MINI_GUN)
         {
-            obj.transform.localPosition = new Vector3(0, 1, -2);
+            obj.transform.localPosition = new Vector3(0, 2, -2);
         }
     }
 

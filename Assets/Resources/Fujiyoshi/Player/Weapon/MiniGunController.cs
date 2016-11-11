@@ -4,8 +4,8 @@ using System.Collections;
 public class MiniGunController : DefaultGunController
 {
 
-    [SerializeField]
-    public GameObject friezeGauge = null;
+    private GameObject friezeGauge = null;
+    public GameObject FriezeGauge { get { return friezeGauge; } set { friezeGauge = value; } }
 
     [SerializeField]
     float defaultWaitTimeOfShot = 0.1f;
@@ -19,6 +19,7 @@ public class MiniGunController : DefaultGunController
     {
         setWaitTimeOfShot(defaultWaitTimeOfShot,maxWaitTimeOfShot);
         StartCoroutine(Shot());
+
     }
 
     private void MakeBullet()
@@ -35,14 +36,16 @@ public class MiniGunController : DefaultGunController
     {
         while (true)
         {
-            if (Input.GetMouseButton(0) && friezeGauge.GetComponent<FriezeGaugeController>().CanShot == true)
+            if (Input.GetMouseButton(0) && friezeGauge.GetComponent<CoolingGauge>().canShot == true)
             {
                 MakeBullet();
-                friezeGauge.GetComponent<FriezeGaugeController>().IsShoted = true;
-
-                yield return new WaitForSeconds(0.05f);
+                friezeGauge.GetComponent<CoolingGauge>().Default();
+                yield return new WaitForSeconds(friezeGauge.GetComponent<CoolingGauge>().rate);
             }
-            
+            else
+            {
+                friezeGauge.GetComponent<CoolingGauge>().Cooling();
+            }
             yield return 0;
         }
     }
