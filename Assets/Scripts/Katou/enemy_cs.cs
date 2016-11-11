@@ -14,6 +14,8 @@ public class enemy_cs : MonoBehaviour
 
     enemy_state state;
 
+    NavMeshAgent agent;
+
     [SerializeField]
     private int maxhp = 10;
 
@@ -25,26 +27,24 @@ public class enemy_cs : MonoBehaviour
 
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Spawner").GetComponent<spawner_cs>().playerPos;
-
         state = GetComponent<enemy_state>();
         state.Hp = maxhp;
-        //Debug.Log(state.Hp);
     }
 
     void Update()
     {
         if (state.isDed) return;
         
-        float e_p_dis = Vector3.SqrMagnitude(transform.position - player);
-
-        //if (e_p_dis < 10.0f)
-        //{
-        //    Attack();
-        //}
-        //else
+        float e_p_dis = Vector3.Distance(transform.position, player);
+        if(e_p_dis < 50.0f)
         {
             Move();
+        }
+        else
+        {
+
         }
     }
 

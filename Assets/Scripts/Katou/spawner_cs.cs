@@ -69,7 +69,7 @@ public class spawner_cs : MonoBehaviour {
             }
             else
             {
-                GameObject.Instantiate(enemy[Random.Range(0, enemy.Length - 1)], spawn_pos[count], Quaternion.Euler(0.0f, -90.0f, 0.0f));
+                GameObject.Instantiate(enemy[Random.Range(0, enemy.Length - 1)], spawn_pos[count], Quaternion.Euler(0.0f, 90.0f, 0.0f));
             }
 
             yield return new WaitForSeconds(time);
