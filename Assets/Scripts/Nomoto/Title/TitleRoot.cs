@@ -317,7 +317,7 @@ public class TitleRoot : MonoBehaviour
         {
             PartsType.transform.localScale
                 = new Vector3(partsBarSize.x,
-                               PartsType.transform.localScale.y - partsBarSize.y * Time.deltaTime * 1.5f,
+                              PartsType.transform.localScale.y - partsBarSize.y * Time.deltaTime * 1.5f,
                               partsBarSize.z);
 
             if (PartsType.transform.localScale.y >= 0) return;
@@ -348,7 +348,7 @@ public class TitleRoot : MonoBehaviour
         {
             if (HitRay("PartsBase" + i.ToString()))
             {
-                SelectedCustomPartFlame.transform.parent = GameObject.Find("PartsBase" + i.ToString()).transform;
+                SelectedCustomPartFlame.transform.SetParent(GameObject.Find("PartsBase" + i.ToString()).transform);
                 SelectedCustomPartFlame.transform.localPosition = new Vector3(0, 0, 0);
             }
         }
@@ -364,7 +364,7 @@ public class TitleRoot : MonoBehaviour
                 if (HitRay("PartsBase" + i.ToString()))
                 {
                     SelectCustomPartsType(i);
-                    SelectedPartsFlame.transform.parent = GameObject.Find("Parts" + selectCustomPartsNum[i].ToString()).transform;
+                    SelectedPartsFlame.transform.SetParent(GameObject.Find("Parts" + selectCustomPartsNum[i].ToString()).transform);
                     SelectedPartsFlame.transform.localPosition = new Vector3(0, 0, 0);
                 }
             }
@@ -395,14 +395,14 @@ public class TitleRoot : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    SelectedPartsFlame.transform.parent = GameObject.Find("Parts" + i.ToString()).transform;
+                    SelectedPartsFlame.transform.SetParent(GameObject.Find("Parts" + i.ToString()).transform);
                     SelectedPartsFlame.transform.localPosition = new Vector3(0, 0, 0);
                     selectCustomPartsNum[nowSelectCustomPartsNum] = i;
                     SetWeaponStatus();
                 }
                 else if (isHitRayParts == false)
                 {
-                    NowSelectPartsFlame.transform.parent = GameObject.Find("Parts" + i.ToString()).transform;
+                    NowSelectPartsFlame.transform.SetParent(GameObject.Find("Parts" + i.ToString()).transform);
                     NowSelectPartsFlame.transform.localPosition = new Vector3(0, 0, 0);
                     isHitRayParts = true;
                     SetAfterStatus(nowSelectCustomPartsNum, i);
