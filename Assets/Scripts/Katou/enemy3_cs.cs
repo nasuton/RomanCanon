@@ -38,11 +38,11 @@ public class enemy3_cs : MonoBehaviour
 
         if(10.0f < e_p_dis)
         {
-            Attack();
+            Move();
         }
         else
         {
-            Move();
+            Attack();
         }
     }
 

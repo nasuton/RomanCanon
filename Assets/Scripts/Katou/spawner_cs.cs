@@ -48,7 +48,7 @@ public class spawner_cs : MonoBehaviour {
 
             spawn_pos[i] = new Vector3(x1, 0.0f, z1);
 
-            float rotary_axis = (i * -1) -180;
+            float rotary_axis = 180 + i;
 
             angle[i] = rotary_axis;
         }
@@ -69,7 +69,7 @@ public class spawner_cs : MonoBehaviour {
             }
             else
             {
-                GameObject.Instantiate(enemy[Random.Range(0, enemy.Length - 1)], spawn_pos[count], Quaternion.Euler(0.0f, 0.0f, 0.0f));
+                GameObject.Instantiate(enemy[Random.Range(0, enemy.Length - 1)], spawn_pos[count], Quaternion.Euler(0.0f, angle[count], 0.0f));
             }
 
             yield return new WaitForSeconds(time);
