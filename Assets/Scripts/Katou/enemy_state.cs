@@ -59,6 +59,7 @@ public class enemy_state : MonoBehaviour
         Destroy(this.gameObject);
         GameObject.Find("ScoreManager").GetComponent<score>().ScoreValue += scorePoint;
         GameObject.Find("ScoreUI").GetComponent<score_notation>().Add_Score();
+        GameObject.Find("RomanBar").GetComponent<RomanGauge>().chargeRomenGaouge(10);
     }
 
     void OnTriggerEnter(Collider other)
