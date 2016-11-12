@@ -17,7 +17,6 @@ public class score : MonoBehaviour
         }
     }
 
-    
     static GameObject _instance = null;
 
     void Awake()
