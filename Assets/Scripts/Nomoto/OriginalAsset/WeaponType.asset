@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf625d98754c83b44a601e5a7969c2ab, type: 3}
   m_Name: WeaponType
   m_EditorClassIdentifier: 
-  weaponNum: 2
+  weaponNum: 0
   normalStatus:
   - 0
   - 0
@@ -30,3 +30,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  bulletNum: 0
+  canRomanModeCount: 1
+  romanModeTime: 0
+  debuffTime: 0
