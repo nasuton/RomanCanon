@@ -7,14 +7,12 @@ using UnityEngine.UI;
 public class score : MonoBehaviour
 {
     private int scoreValue;
-    [SerializeField]
-    GameObject obj;
+
+
     public int ScoreValue
     {
         get { return scoreValue; }
-        set { scoreValue = value;
-            obj.GetComponent<score_notation>().Add_Score();
-        }
+        set { scoreValue = value;}
     }
 
     
@@ -36,6 +34,7 @@ public class score : MonoBehaviour
 
     void Start()
     {
+        
         scoreValue = 0;
     }
 }

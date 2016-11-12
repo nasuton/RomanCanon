@@ -16,6 +16,11 @@ public class BulletOfRailGun : MonoBehaviour
     
     }
 
+    void Awake()
+    {
+        this.GetComponent<BulletDamege>().Damege = GameObject.Find("WeaponStatus").GetComponent<WeaponStatusManager>().Status[0];
+    }
+
     void Update()
     {
         Move();
