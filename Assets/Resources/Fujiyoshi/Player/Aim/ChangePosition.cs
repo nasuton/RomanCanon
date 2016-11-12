@@ -17,7 +17,7 @@ public class ChangePosition : MonoBehaviour {
         weaponType = type.GetComponent<WeaponTypeManager>().asset.WeaponNum;
         if (weaponType == (int)WeaponType.MINI_GUN)
         {
-            this.transform.localPosition = new Vector3(0, 0, 0);
+            this.transform.localPosition = new Vector3(-1, 0, 0);
         }
 
         else if (weaponType == (int)WeaponType.RAIL_GUN)

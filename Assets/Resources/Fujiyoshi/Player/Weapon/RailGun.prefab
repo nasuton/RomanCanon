@@ -12,7 +12,7 @@ GameObject:
   - 65: {fileID: 6597172}
   - 23: {fileID: 2396990}
   - 114: {fileID: 11424438}
-  - 114: {fileID: 114000011823280934}
+  - 114: {fileID: 114000012083324628}
   m_Layer: 0
   m_Name: BulletOfRailGun
   m_TagString: Untagged
@@ -208,7 +208,7 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 189186}
   m_IsPrefabParent: 1
---- !u!114 &114000011823280934
+--- !u!114 &114000012083324628
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 172630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f3f815b2a0020749b00216ab522ac9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 469c60253ddf2af479895335a5eb8505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damege: 0
