@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012852772826}
+  m_RootGameObject: {fileID: 1000013766823282}
   m_IsPrefabParent: 1
---- !u!1 &1000012852772826
+--- !u!1 &1000013766823282
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000012601402224}
-  - 33: {fileID: 33000010576682972}
-  - 136: {fileID: 136000010334989758}
-  - 23: {fileID: 23000011839454244}
-  - 114: {fileID: 114000011903806430}
-  - 114: {fileID: 114000013098252466}
-  - 54: {fileID: 54000012049958738}
+  - 4: {fileID: 4000011714730920}
+  - 33: {fileID: 33000010358447182}
+  - 136: {fileID: 136000010082558766}
+  - 23: {fileID: 23000011115317752}
+  - 114: {fileID: 114000010534683830}
+  - 114: {fileID: 114000012094888334}
+  - 54: {fileID: 54000012601375672}
   m_Layer: 0
-  m_Name: Enemy4
+  m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000012601402224
+--- !u!4 &4000011714730920
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012852772826}
+  m_GameObject: {fileID: 1000013766823282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000011839454244
+--- !u!23 &23000011115317752
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012852772826}
+  m_GameObject: {fileID: 1000013766823282}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0a310edd5e3171646a79d752c93066a2, type: 2}
+  - {fileID: 2100000, guid: 65104e0eddaa3b54d953593a4c0f15f1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -74,19 +74,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000010576682972
+--- !u!33 &33000010358447182
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012852772826}
+  m_GameObject: {fileID: 1000013766823282}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54000012049958738
+--- !u!54 &54000012601375672
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012852772826}
+  m_GameObject: {fileID: 1000013766823282}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -96,25 +96,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114000011903806430
+--- !u!114 &114000010534683830
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012852772826}
+  m_GameObject: {fileID: 1000013766823282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54e8b458a53f3f1429f6432dfa342ec1, type: 3}
+  m_Script: {fileID: 11500000, guid: cd798571798743d4e96aab68e9bfdc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  add_score: 40
---- !u!114 &114000013098252466
+  speed: 1.5
+  add_score: 20
+  maxhp: 10
+--- !u!114 &114000012094888334
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012852772826}
+  m_GameObject: {fileID: 1000013766823282}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f072d8065ff4d49a4e1a0ec962c19b, type: 3}
@@ -124,12 +125,12 @@ MonoBehaviour:
   effect: {fileID: 1000013269147760, guid: 71f11975de60ffe4db816f6d09dbfb43, type: 2}
   maxInvincibleTime: 1
   scorePoint: 10
---- !u!136 &136000010334989758
+--- !u!136 &136000010082558766
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012852772826}
+  m_GameObject: {fileID: 1000013766823282}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

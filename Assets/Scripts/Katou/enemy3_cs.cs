@@ -36,13 +36,13 @@ public class enemy3_cs : MonoBehaviour
 
         float e_p_dis = Vector3.Distance(transform.position, player);
 
-        if(75 <= e_p_dis)
+        if(10.0f < e_p_dis)
         {
-
+            Move();
         }
         else
         {
-            Move();
+            Attack();
         }
     }
 

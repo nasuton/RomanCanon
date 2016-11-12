@@ -34,7 +34,7 @@ public class enemy4_cs : MonoBehaviour {
     {
         if (state.isDed) return;
 
-        float e_p_dis = Vector3.SqrMagnitude(transform.position - player);
+        float e_p_dis = Vector3.Distance(transform.position, player);
 
         if (e_p_dis < 10.0f)
         {

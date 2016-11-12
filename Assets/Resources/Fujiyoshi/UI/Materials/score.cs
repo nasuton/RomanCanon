@@ -15,7 +15,6 @@ public class score : MonoBehaviour
         set { scoreValue = value;}
     }
 
-    
     static GameObject _instance = null;
 
     void Awake()
