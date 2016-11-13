@@ -39,7 +39,14 @@ public class MiniGunController : DefaultGunController
             if (Input.GetMouseButton(0) && friezeGauge.GetComponent<CoolingGauge>().canShot == true)
             {
                 MakeBullet();
-                friezeGauge.GetComponent<CoolingGauge>().Default();
+                if(GameObject.Find("RomanBar").GetComponent<RomanGauge>().roman_mode == false) {
+                    friezeGauge.GetComponent<CoolingGauge>().Default();
+                }
+                else
+                {
+                    friezeGauge.GetComponent<CoolingGauge>().Cooling();
+                }
+                
                 yield return new WaitForSeconds(friezeGauge.GetComponent<CoolingGauge>().rate);
             }
             else

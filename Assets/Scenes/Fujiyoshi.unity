@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692504, g: 0.4967869, b: 0.57508504, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692498, g: 0.49678648, b: 0.5750842, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -244,45 +244,45 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011360391814, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+    - target: {fileID: 4000013811886662, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013927704178, guid: f43583cccc3a9084f8bb25f476eed055,
+    - target: {fileID: 114000012690172190, guid: 3b0e7ef7c51245440abd8ecc834be79e,
         type: 2}
       propertyPath: Text
       value: 
       objectReference: {fileID: 1860799947}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f43583cccc3a9084f8bb25f476eed055, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 3b0e7ef7c51245440abd8ecc834be79e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &963790169
 Prefab:
@@ -447,12 +447,12 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1 &1289422011 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1000010662362350, guid: f43583cccc3a9084f8bb25f476eed055,
+  m_PrefabParentObject: {fileID: 1000011099102502, guid: 3b0e7ef7c51245440abd8ecc834be79e,
     type: 2}
   m_PrefabInternal: {fileID: 957831132}
 --- !u!1 &1364590053 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1000012081666858, guid: f43583cccc3a9084f8bb25f476eed055,
+  m_PrefabParentObject: {fileID: 1000014082381220, guid: 3b0e7ef7c51245440abd8ecc834be79e,
     type: 2}
   m_PrefabInternal: {fileID: 957831132}
 --- !u!1001 &1421689890
@@ -643,11 +643,11 @@ MonoBehaviour:
   - 0
 --- !u!1 &2100643839 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1000013037492728, guid: f43583cccc3a9084f8bb25f476eed055,
+  m_PrefabParentObject: {fileID: 1000012561074970, guid: 3b0e7ef7c51245440abd8ecc834be79e,
     type: 2}
   m_PrefabInternal: {fileID: 957831132}
 --- !u!1 &2121443555 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1000011762003608, guid: f43583cccc3a9084f8bb25f476eed055,
+  m_PrefabParentObject: {fileID: 1000010476507008, guid: 3b0e7ef7c51245440abd8ecc834be79e,
     type: 2}
   m_PrefabInternal: {fileID: 957831132}
