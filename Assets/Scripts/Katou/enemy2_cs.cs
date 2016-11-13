@@ -34,7 +34,7 @@ public class enemy2_cs : MonoBehaviour {
     {
         if (state.isDed) return;
 
-        float e_p_dis = Vector3.Distance(transform.position, player);
+        //float e_p_dis = Vector3.Distance(transform.position, player);
 
         //if (e_p_dis < 10.0f)
         //{
@@ -50,6 +50,8 @@ public class enemy2_cs : MonoBehaviour {
     {
         Quaternion targetRotation = Quaternion.LookRotation(player - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 1.0f);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
