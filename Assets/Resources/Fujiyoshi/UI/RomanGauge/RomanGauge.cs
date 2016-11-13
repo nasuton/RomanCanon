@@ -31,16 +31,15 @@ public class RomanGauge : MonoBehaviour {
             }
         }
     }
-    public int a;
+
     void changeRomanMode()
     {
         if (roman_num > 0)
         {
-            a++;
             if ((int)roman_value == (int)roman_max)
             {
                 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetMouseButton(1))
                 {
                     roman_mode = true;
                     roman_num--;
