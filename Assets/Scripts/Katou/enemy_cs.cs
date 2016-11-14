@@ -37,12 +37,12 @@ public class enemy_cs : MonoBehaviour
     {
         if (state.isDed) return;
         
-        float e_p_dis = Vector3.Distance(transform.position, player);
-        if(e_p_dis < 10.0f)
-        {
-            Attack();
-        }
-        else
+        //float e_p_dis = Vector3.Distance(transform.position, player);
+        //if(e_p_dis < 10.0f)
+        //{
+        //    Attack();
+        //}
+        //else
         {
             Move();
         }
@@ -50,8 +50,12 @@ public class enemy_cs : MonoBehaviour
 
     void Move()
     {
+        //色々と挙動がおかしいよ？
         Quaternion targetRotation = Quaternion.LookRotation(player - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 1.0f);
+
+        //何故か、登っていくよ？
+        transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sin(Time.frameCount * 0.1f), transform.position.z);
 
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
